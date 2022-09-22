@@ -1,0 +1,25 @@
+.Coin {
+    max-width: 80%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: antiquewhite;
+     margin-top: 5px;
+     list-style: none;
+     cursor: pointer;
+ }
+ 
+ .CoinImg {
+     width: 80px;
+ }
+ .CoinApp a {
+     text-decoration: none;
+     color: black;
+ }
+
+ .myLine {
+    max-width: 90%;
+    max-height: 500px;
+    
+ }
+

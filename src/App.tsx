@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import {Routes, Route, Link, Navigate} from 'react-router-dom'
+import { Login } from './components/Login';
+import Register from './components/Register';
+import Home from './components/Home';
+import NotFound from './components/NotFound';
+import { IUserData } from './model';
+import CoinList from './components/pages/chart/CoinList';
+import CoinDetailPage from './components/pages/chart/CoinDetailPage';
+
+
+
 
 function App() {
+
+  const [isAuth, setIsAuth] = useState<boolean>(false)
+  const [userData, setUserData] = useState<IUserData | null>(null)
+
+
+
+  
+  
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>Header</h3>
+      <Routes>
+        <Route path='/'  element={<Login setIsAuth={setIsAuth}  />} />
+        <Route path='/register' element={<Register setUserData={setUserData}/>} />
+       {isAuth &&  <Route path='/home' element={<Home setIsAuth={setIsAuth} />} /> }
+       <Route path={'/home/:id'} element={<CoinDetailPage />} />
+       <Route path="*" element={<NotFound  />} />
+      </Routes>
     </div>
   );
 }
