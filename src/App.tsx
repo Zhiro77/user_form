@@ -15,20 +15,16 @@ import CoinDetailPage from './components/pages/chart/CoinDetailPage';
 function App() {
 
   const [isAuth, setIsAuth] = useState<boolean>(false)
-  const [userData, setUserData] = useState<IUserData | null>(null)
 
 
 
-  
-  
-  
 
   return (
     <div className="App">
       <h3>Header</h3>
       <Routes>
         <Route path='/'  element={<Login setIsAuth={setIsAuth}  />} />
-        <Route path='/register' element={<Register setUserData={setUserData}/>} />
+        <Route path='/register' element={<Register />} />
        {isAuth &&  <Route path='/home' element={<Home setIsAuth={setIsAuth} />} /> }
        <Route path={'/home/:id'} element={<CoinDetailPage />} />
        <Route path="*" element={<NotFound  />} />

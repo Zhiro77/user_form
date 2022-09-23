@@ -12,7 +12,8 @@ interface IFormInput {
   password: string;
   age: number;
   gender: GenderEnum;
-  email: string
+  email: string,
+  id?:number
 }
 
 enum GenderEnum {
@@ -20,11 +21,9 @@ enum GenderEnum {
   male = "male",
 }
 
-type Props = {
-  setUserData: (user: IUserData) => void
-}
 
-const Register: React.FC<Props> = ({setUserData}) => {
+
+const Register: React.FC = () => {
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -45,7 +44,7 @@ const Register: React.FC<Props> = ({setUserData}) => {
 
     if (arrEmail.length === 0) {
       dispatch(setUser(data))
-      setUserData(data)
+
       reset()
       navigate('/')
       return alert('Are you registered !')
@@ -55,7 +54,6 @@ const Register: React.FC<Props> = ({setUserData}) => {
         return  alert('email in unique')
         } else {
           dispatch(setUser(data))
-          setUserData(data)
           reset()
           navigate('/')
           return alert('Are you registered !')

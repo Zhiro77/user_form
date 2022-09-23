@@ -18,8 +18,6 @@ export const Login: React.FC<Props> = ({setIsAuth}) => {
     const userLog = useSelector((state: any) => state.user.users  )
     const navigate = useNavigate()
 
-    console.log("userLog: ", userLog)
- 
 
     const arrLog: any = []
 

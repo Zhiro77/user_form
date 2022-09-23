@@ -4,6 +4,7 @@ export interface IUserData {
     gender: string
     name: string
     password: string
+    id?: number
 }
 
 

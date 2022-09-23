@@ -5,8 +5,8 @@ const UserPage = () => {
 
     const userData = useSelector((state: any) => state.user.currentUser)
 
-    console.log(userData, "usu");
-    //ssss
+    
+    
 
     return (
         <div>
@@ -15,6 +15,7 @@ const UserPage = () => {
             </div>
             <div>
                 <b>Name: </b>{userData.name}
+                   
             </div>
             <div>
                 <b>Email: </b> {userData.email}
