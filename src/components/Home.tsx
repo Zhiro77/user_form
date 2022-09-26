@@ -5,6 +5,8 @@ import { removeUser } from "../redux/slices/UserSlice"
 import CoinList from "./pages/chart/CoinList"
 import UserPage from "./pages/UserPage"
 import Tree from "./tree/Tree";
+import AllUsersPage from './pages/allUsers/AllUsersPage'
+
 
 
 
@@ -35,6 +37,7 @@ const Home = ({setIsAuth}: any) => {
             <CoinList />
 
             <Tree stateAll={stateAll} />
+            <AllUsersPage />
         </div>
     )
 }

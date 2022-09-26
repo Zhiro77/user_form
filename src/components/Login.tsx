@@ -24,9 +24,10 @@ export const Login: React.FC<Props> = ({setIsAuth}) => {
 
 
     if (userLog.length > 0) {
-        userLog.map((item: any) => arrLog.push({email:item.email, password: item.password, name: item.name}))
+        userLog.map((item: any) => arrLog.push({email:item.email, password: item.password, name: item.name, age: item.age, gender: item.gender}))
     }
-    
+
+
 
 
     interface IFormInput {
@@ -37,6 +38,9 @@ export const Login: React.FC<Props> = ({setIsAuth}) => {
       const { register, handleSubmit,reset, formState: { errors } } = useForm<IFormInput>();
       const onSubmit: SubmitHandler<IFormInput> = async (data: any) => {
         
+        if (arrLog.length === 0) {
+            alert('User is not found')
+        }
 
         if(arrLog.length > 0) {
             let a =  arrLog.map((item: any) => {
@@ -50,7 +54,7 @@ export const Login: React.FC<Props> = ({setIsAuth}) => {
 
             let arr = arrLog.find((item: any) => data.email === item.email && data.password === item.password)
 
-           if(arr === undefined) {
+           if(arr === undefined || null) {
             alert('wrong email or password')
            }
         
@@ -59,7 +63,6 @@ export const Login: React.FC<Props> = ({setIsAuth}) => {
       
       };
 
-      console.log(userLog, "userLog")
 
     return (
         <div>

@@ -13,6 +13,7 @@ const userSlice = createSlice({
         
         setUser: (state,action) => {
 
+
             state.users.push(action.payload)
 
         },
@@ -24,11 +25,25 @@ const userSlice = createSlice({
         removeUser: (state) => {
             state.currentUser = null
         },
+
+        updateUserEmail: (state,action) => {
+
+            state.users.map((user: any) => {
+                if (user.email === action.payload.mail) {
+                    user.email = action.payload.email   
+                }
+                
+            })
+
+            state.currentUser.email = action.payload.email
+        }
+
+        
         
 
     }
 })
 
-export let {setUser, removeUser, setCurrentUser} = userSlice.actions
+export let {setUser, removeUser, setCurrentUser, updateUserEmail} = userSlice.actions
 
 export default userSlice.reducer

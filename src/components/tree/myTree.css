@@ -1,0 +1,40 @@
+.Mycaret {
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+}
+
+.Mycaret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.caret-down::before {
+    transform: rotate(90deg);
+}
+
+.nested {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+ul,
+#myUL {
+    list-style: none;
+}
+
+#myUL {
+    margin: 0;
+    padding: 0;
+}
+
+.myTree {
+    text-align: left;
+    list-style: none;
+    margin-left: 2rem;
+}

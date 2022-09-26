@@ -8,4 +8,9 @@
   padding: 10px 0;
 }
 
+.changeIcon {
+  padding-left: 10px;
+  cursor: pointer
+}
+
 

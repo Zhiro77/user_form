@@ -1,0 +1,15 @@
+.Users {
+    width: 100%;
+    height: 400px;
+}
+
+.user {
+    width: 500px;
+    min-height: 150px;
+    box-shadow: 5px 5px 15px black;
+    background: rgb(193, 220, 248);
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    cursor: grab
+}
