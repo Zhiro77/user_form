@@ -30,12 +30,13 @@ const Home = ({setIsAuth}: any) => {
         <div>
             <div className='d-flex justify-content-around'>
             <UserPage />
+            <hr />
                 <div>
                     <button onClick={logOut}>log out</button>
                 </div>
             </div>
             <CoinList />
-
+            <hr/>
             <Tree stateAll={stateAll} />
             <AllUsersPage />
         </div>

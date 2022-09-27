@@ -195,7 +195,7 @@ const HistoryChart: any = () => {
     return (
         <div className={stl.myChart}>
             <Line options={options} data={data} width={400} datasetIdKey="id" className={stl.myLine}/>
-            <div>
+            <div className="d-flex justify-content-center">
                 <div className={`btn btn-outline-secondary p-1 btn-sm ${actveClass1}`} onClick={() => changeClasses24()}>24 h</div>
                 <div className={`btn btn-outline-secondary p-1  btn-sm mx-1 ${actveClass7}`} onClick={() => changeClasses7()}>7 d</div>
                 <div className={`btn btn-outline-secondary p-1  btn-sm ${actveClass365}`} onClick={() => changeClasses365()}>1 y</div>

@@ -13,7 +13,6 @@ const userSlice = createSlice({
         
         setUser: (state,action) => {
 
-
             state.users.push(action.payload)
 
         },

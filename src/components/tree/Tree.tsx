@@ -35,6 +35,7 @@ const Tree = ({ stateAll }: any) => {
 
     return (
         <div className={'myTree'}>
+            <h3>Tree</h3>
             {
                 tree(stateAll, 0, 0)
             }

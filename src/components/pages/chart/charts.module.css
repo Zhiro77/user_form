@@ -1,13 +1,15 @@
 .Coin {
-    max-width: 80%;
+     max-width: 100%;
      display: flex;
      justify-content: space-between;
      align-items: center;
      background-color: antiquewhite;
      margin-top: 5px;
      list-style: none;
-     cursor: pointer;
+     cursor: grab;
  }
+
+
  
  .CoinImg {
      width: 80px;
@@ -21,5 +23,9 @@
     max-width: 90%;
     max-height: 500px;
     
+ }
+
+ .CoinApp {
+    width: 100%;
  }
 

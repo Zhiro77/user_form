@@ -42,6 +42,9 @@ const Register: React.FC = () => {
   const { register, handleSubmit,reset,formState: { errors } } = useForm<IFormInput>();
   const onSubmit: SubmitHandler<IFormInput> = (data: any) => {
 
+
+    console.log(data, "DData")
+
     if (arrEmail.length === 0) {
       dispatch(setUser(data))
 
@@ -50,18 +53,21 @@ const Register: React.FC = () => {
       return alert('Are you registered !')
     } else if (arrEmail.length > 0) {
      arrEmail.map((item: any) => {
-        if(item === data.email) {
-        return  alert('email in unique')
-        } else {
+        if(item === data.email) return  alert('email in unique') 
+      })
+
           dispatch(setUser(data))
           reset()
           navigate('/')
           return alert('Are you registered !')
-        }
-      })
     }
+
+    return
   
   }
+
+  console.log(arrEmail, 'arremail');
+  
 
 
 

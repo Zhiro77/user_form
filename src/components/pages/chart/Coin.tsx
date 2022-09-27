@@ -8,7 +8,7 @@ interface Icoin {
     coin: CoinsData
 }
 
-const Coin = ({coin} : Icoin) => {
+const Coin = ({coin} : Icoin | any) => {
     return (
         <div className={stl.CoinApp}>
             <Link to={`/home/${coin.id}`}>
